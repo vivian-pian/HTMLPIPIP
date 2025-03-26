@@ -274,7 +274,7 @@
             </section>
             
             <footer>
-                <p>&copy; 2025 oleh vivian</p>
+                <p>&copy; 2025 oleh Institut Teknologi dan Bisnis Sabda Setia</p>
             </footer>
             
             <div class="institute-name">
@@ -282,5 +282,116 @@
             </div>
         </main>
     </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulir Pendaftaran Mahasiswa Baru</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .radio-group, .checkbox-group {
+            margin-bottom: 10px;
+        }
+        .radio-group label, 
+        .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulir Pendaftaran Mahasiswa Baru</h1>
+    <form>
+        <div class="form-group">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tanggal-lahir">Tanggal Lahir:</label>
+            <input type="date" id="tanggal-lahir" name="tanggal-lahir" required>
+        </div>
+
+        <div class="form-group">
+            <label>Jenis Kelamin:</label>
+            <div class="radio-group">
+                <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki" required>
+                <label for="laki-laki">Laki-laki</label>
+                <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan">
+                <label for="perempuan">Perempuan</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="prodi">Program Studi:</label>
+            <select id="prodi" name="prodi" required>
+                <option value="">Pilih Program Studi</option>
+                <option value="informatika">Bisnis Digital</option>
+                <option value="sistem-informasi">Sistem Informasi</option>
+                <option value="manajemen">kewirausahaan</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Mata Kuliah:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="programming" name="minat" value="programming">
+                <label for="programming">Programming</label>
+                <input type="checkbox" id="desain" name="minat" value="desain">
+                <label for="desain">Desain</label>
+                <input type="checkbox" id="kewirausahaan" name="minat" value="kewirausahaan">
+                <label for="kewirausahaan">kewirausahaan</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="alamat">Alamat Lengkap:</label>
+            <textarea id="alamat" name="alamat" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="motivasi">Motivasi Kuliah:</label>
+            <textarea id="motivasi" name="motivasi" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="dokumen">Dokumen Pendukung:</label>
+            <input type="file" id="dokumen" name="dokumen" multiple>
+        </div>
+
+        <button type="submit">Daftar</button>
+    </form>
 </body>
 </html>
