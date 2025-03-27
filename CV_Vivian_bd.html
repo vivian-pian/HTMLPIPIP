@@ -1,34 +1,125 @@
 <!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UFT-8">
-        <meta name="Viewport" content="width=device-widht,initial-scale=1.0">
-        <title>vivian - Portofolio Saya</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                line-height: 1.6;
-                max-widht: 800px;
-                
-            }
-        </style>
-    </head>
-    <body>
-        <h1> Vivian </h1>
-        <p> Mahasiswa Itbss </p>
-        <h2> Tentang Sayaa </h2>
-        <p> Saya adalah seorang mahasiswa yang berada di kampus itbss, dengan jurusan atau prodi bisnis digital 
-            . Saya juga seorang mahasiswa yang memiliki hobi dengan membaca novel, memain game, mengedit video, dan banyak hal lainnya juga.
-        </p>
-        <h2> Pendidikan </h2> 
-        <p> &#8594; bisnis digital - Institut Teknologi dan bisnis sabda setia </p>
-        <h2> Pengalaman Kerja </h2>
-        <p> &#8594; belum ada kerjaan </p>
-        <h2> Keahlian </h2>
-        <p> &#8594; css</p>
-        <p> &#8594; html</p>
-        <h2> kontak </h2>
-        <p> Email : vivian@itbss.ac.id </p>
-        <p> github : https://github.com/vivian-pian </p>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Vivian</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #a5b4fc;
+            margin-bottom: 30px;
+        }
+        .profile-info h1 {
+            color: #6366f1;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .profile-info p {
+            color: #6b7280;
+            font-weight: 300;
+        }
+        .contact-info {
+            text-align: right;
+            color: #4b5563;
+        }
+        section {
+            background-color: #f3f4f6;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        section h2 {
+            color: #6366f1;
+            border-bottom: 2px solid #a5b4fc;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        #keahlian ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        #keahlian li {
+            background-color: #a5b4fc;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            list-style: none;
+        }
+        #portofolio-saya {
+            background-color: #e0e7ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-info">
+                <h1>Vivian</h1>
+                <p>Mahasiswa</p>
+            </div>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:vivian@itbss.ac.id">vivian@itbss.ac.id</a></p>
+                <p>GitHub: <a href="https://github.com/vivian-pian" target="_blank">github.com/vivian-pian</a></p>
+                <p>LMS ITBSS: <a href="https://lmsmahasiswa.itbss.ac.id/" target="_blank">lmsmahasiswa.itbss.ac.id</a></p>
+            </div>
+        </header>
+
+        <section id="tentang-saya">
+            <h2>Tentang Saya</h2>
+            <p>Saya seorang mahasiswa itbss, yang sedang berkuliah dijurusan atau diprodi bisnis digital. saya adalah angkatan ketiga yaitu angkatan 2023, sebelumnya saya berpendidikan di SMA santu petrus yang mengambil jurusan IPA. sebenarnya saya tidak memiliki basic yang cukup banyak untuk jurusan perkuliahan ini, tetapi untungngnya di beberapa matkul saya bisa memahami dasarnya seperti HTML ini. sedikit diketahui bahwa saya memiliki hobi menulis sebuah cerita atau novel, bahkan saya suka membaca novel, mendengarkan musik dan juga main game untuk mengisi waktu yang cukup melelahkan untuk saya. oh iya juga, saya lahir di pontianak dan tinggal dipontianak sejak saya lahir hingga sekarang. mata kuliah yang cukup saya minati dan saya sukai yaitu perkuliahan yang berhubungan dengan hukum dan adanya pemograman, meskipun saya sangat-sangat tidak pandai coding, tapi saya suka kalau saya sudah membuatnya dan mencoba hingga hasilnya menjadi menarik itu membuat saya terlihat hasil kerjaan saya jadi indah, meskipun tugas atau ulangan ibu sangat-sangat susah tapi gapapa hahaha.</p>
+        </section>
+
+        <section id="pendidikan">
+            <h2>Pendidikan</h2>
+        <p>sarjana bisnis digital - Institut Teknologi Bisnis dan Sabda Setia </p>
+        </section>
+
+        <section id="pengalaman-kerja">
+            <h2>Pengalaman Kerja</h2>
+            <ul>
+                <li>none</li>
+            </ul>
+        </section>
+
+        <section id="keahlian">
+            <h2>Keahlian</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+        </section>
+
+        <section id="portofolio-saya">
+            <h2>Portofolio Saya</h2>
+            <div class="media-content">
+                <!-- Tambahkan konten portofolio di sini -->
+            </div>
+        </section>
+    </div>
+</body>
 </html>
