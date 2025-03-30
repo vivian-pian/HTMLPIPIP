@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Kuliah</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #34495e;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .time-col {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .break-row {
+            background-color: #f39c12 !important;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .class {
+            padding: 8px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        .none {
+            background-color: #ecf0f1;
+            color: #95a5a6;
+            font-style: italic;
+        }
+        
+        .web {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .economics {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .accounting {
+            background-color: #9b59b6;
+            color: white;
+        }
+        
+        .database {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .social-media {
+            background-color: #1abc9c;
+            color: white;
+        }
+        
+        .business-law {
+            background-color: #f1c40f;
+            color: black;
+        }
+        
+        .statistics {
+            background-color: #d35400;
+            color: white;
+        }
+        
+        .pray {
+            background-color: #27ae60;
+            color: white;
+        }
+        
+        @media screen and (max-width: 600px) {
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jadwal Kuliah</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Waktu/Hari</th>
+                    <th>Senin</th>
+                    <th>Selasa</th>
+                    <th>Rabu</th>
+                    <th>Kamis</th>
+                    <th>Jumat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time-col">08.00 - 09.40</td>
+                    <td><span class="class none">none</span></td>
+                    <td><span class="class none">none</span></td>
+                    <td><span class="class web">Pemograman Web Dasar</span></td>
+                    <td><span class="class none">none</span></td>
+                    <td><span class="class statistics">Statistika Bisnis</span></td>
+                </tr>
+                <tr>
+                    <td class="time-col">09.50 - 11.30</td>
+                    <td><span class="class none">none</span></td>
+                    <td><span class="class none">none</span></td>
+                    <td><span class="class economics">Microeconomics</span></td>
+                    <td><span class="class accounting">Prinsip - Prinsip Akuntansi</span></td>
+                    <td><span class="class pray">Ibadah</span></td>
+                </tr>
+                <tr class="break-row">
+                    <td class="time-col">11.30 - 12.30</td>
+                    <td colspan="5">BREAK</td>
+                </tr>
+                <tr>
+                    <td class="time-col">12.30 - 14.10</td>
+                    <td><span class="class database">Sistem Basis data</span></td>
+                    <td><span class="class social-media">Brand & Social Media Management</span></td>
+                    <td><span class="class business-law">Hukum Bisnis</span></td>
+                    <td><span class="class none">none</span></td>
+                    <td><span class="class none">none</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
