@@ -16,6 +16,8 @@
             background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .page-wrapper {
@@ -52,7 +54,6 @@
             flex: 1;
             margin-left: 120px;
             padding: 40px;
-            max-width: 1200px;
         }
         
         header {
@@ -73,6 +74,12 @@
             margin: 30px 0 15px 0;
             padding-bottom: 8px;
             border-bottom: 1px solid #eaeaea;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #555;
+            margin: 20px 0 10px 0;
         }
         
         nav {
@@ -147,7 +154,7 @@
             font-weight: 500;
         }
         
-        input, textarea {
+        input, select, textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #ddd;
@@ -155,9 +162,10 @@
             font-family: inherit;
             font-size: 16px;
             transition: border-color 0.3s;
+            margin-bottom: 10px;
         }
         
-        input:focus, textarea:focus {
+        input:focus, textarea:focus, select:focus {
             outline: none;
             border-color: #6e8efb;
             box-shadow: 0 0 0 3px rgba(110, 142, 251, 0.1);
@@ -166,6 +174,21 @@
         textarea {
             min-height: 120px;
             resize: vertical;
+        }
+        
+        .radio-group, .checkbox-group {
+            margin-bottom: 10px;
+        }
+        
+        .radio-group label, .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        
+        .radio-group input, .checkbox-group input {
+            width: auto;
+            margin-right: 5px;
         }
         
         button {
@@ -201,6 +224,57 @@
             color: #555;
             font-weight: 500;
         }
+        
+        input[type="file"] {
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        
+        .payment-options {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .bank-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        
+        .bank-option:last-child {
+            margin-bottom: 0;
+        }
+        
+        .bank-option input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .bank-option img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+        .bank-option .bank-details {
+            flex-grow: 1;
+        }
+        
+        .bank-option .bank-name {
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+        
+        .bank-option .account-number {
+            color: #555;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
@@ -219,6 +293,7 @@
                 <a href="#Tentang">Tentang</a>
                 <a href="#Kursus">Kursus</a>
                 <a href="#Kontak">Kontak</a>
+                <a href="#Pendaftaran">Pendaftaran</a>
             </nav>
             
             <section id="Tentang">
@@ -255,13 +330,13 @@
                 <h2>Hubungi Kami</h2>
                 <form>
                     <div class="form-group">
-                        <label for="nama">Nama:</label>
-                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda">
+                        <label for="nama-kontak">Nama:</label>
+                        <input type="text" id="nama-kontak" name="nama" placeholder="Masukkan nama Anda">
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Masukkan email Anda">
+                        <label for="email-kontak">Email:</label>
+                        <input type="email" id="email-kontak" name="email" placeholder="Masukkan email Anda">
                     </div>
                     
                     <div class="form-group">
@@ -270,6 +345,122 @@
                     </div>
                     
                     <button type="submit">Kirim</button>
+                </form>
+            </section>
+            
+            <section id="Pendaftaran">
+                <h2>Formulir Pendaftaran Mahasiswa Baru</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap:</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="tanggal-lahir">Tanggal Lahir:</label>
+                        <input type="date" id="tanggal-lahir" name="tanggal-lahir" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label>Jenis Kelamin:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki" required>
+                            <label for="laki-laki">Laki-laki</label>
+                            <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan">
+                            <label for="perempuan">Perempuan</label>
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="prodi">Program Studi:</label>
+                        <select id="prodi" name="prodi" required>
+                            <option value="">Pilih Program Studi</option>
+                            <option value="informatika">Bisnis Digital</option>
+                            <option value="sistem-informasi">Sistem Informasi</option>
+                            <option value="manajemen">Kewirausahaan</option>
+                        </select>
+                    </div>
+            
+                    <div class="form-group">
+                        <label>Mata Kuliah:</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="programming" name="minat" value="programming">
+                            <label for="programming">Programming</label>
+                            <input type="checkbox" id="desain" name="minat" value="desain">
+                            <label for="desain">Desain</label>
+                            <input type="checkbox" id="kewirausahaan" name="minat" value="kewirausahaan">
+                            <label for="kewirausahaan">Kewirausahaan</label>
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="alamat">Alamat Lengkap:</label>
+                        <textarea id="alamat" name="alamat" required></textarea>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="motivasi">Motivasi Kuliah:</label>
+                        <textarea id="motivasi" name="motivasi" required></textarea>
+                    </div>
+                    
+                    <h3>Metode Pembayaran</h3>
+                    <div class="payment-options">
+                        <div class="bank-option">
+                            <input type="radio" id="bca" name="payment-method" value="bca" required>
+                            <div class="bank-details">
+                                <div class="bank-name">Bank Central Asia (BCA)</div>
+                        
+                            </div>
+                        </div>
+                        
+                        <div class="bank-option">
+                            <input type="radio" id="mandiri" name="payment-method" value="mandiri">
+                            <div class="bank-details">
+                                <div class="bank-name">Bank Mandiri</div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="bank-option">
+                            <input type="radio" id="bni" name="payment-method" value="bni">
+                            <div class="bank-details">
+                                <div class="bank-name">Bank Negara Indonesia (BNI)</div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="bank-option">
+                            <input type="radio" id="bri" name="payment-method" value="bri">
+                            <div class="bank-details">
+                                <div class="bank-name">Bank Rakyat Indonesia (BRI)</div>
+                                
+                        </div>
+                    </div>
+            
+                        <div class="bank-option">
+                            <input type="radio" id="bank lainnya" name="payment-method" value="bank lainnya">
+                            <div class="bank-details">
+                                <div class="bank-name">Bank lainnya</div>
+                                
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <label for="bukti-pembayaran">Bukti Pembayaran:</label>
+                        <input type="file" id="bukti-pembayaran" name="bukti-pembayaran" required>
+                        <p style="font-size: 0.9em; color: #666; margin-top: 5px;">Upload bukti transfer pembayaran pendaftaran</p>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="dokumen">Dokumen Pendukung:</label>
+                        <input type="file" id="dokumen" name="dokumen" multiple>
+                    </div>
+            
+                    <button type="submit">Daftar</button>
                 </form>
             </section>
             
@@ -282,116 +473,5 @@
             </div>
         </main>
     </div>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulir Pendaftaran Mahasiswa Baru</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-        }
-        .radio-group, .checkbox-group {
-            margin-bottom: 10px;
-        }
-        .radio-group label, 
-        .checkbox-group label {
-            display: inline-block;
-            margin-right: 15px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h1>Formulir Pendaftaran Mahasiswa Baru</h1>
-    <form>
-        <div class="form-group">
-            <label for="nama">Nama Lengkap:</label>
-            <input type="text" id="nama" name="nama" required>
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-            <label for="tanggal-lahir">Tanggal Lahir:</label>
-            <input type="date" id="tanggal-lahir" name="tanggal-lahir" required>
-        </div>
-
-        <div class="form-group">
-            <label>Jenis Kelamin:</label>
-            <div class="radio-group">
-                <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki" required>
-                <label for="laki-laki">Laki-laki</label>
-                <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan">
-                <label for="perempuan">Perempuan</label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="prodi">Program Studi:</label>
-            <select id="prodi" name="prodi" required>
-                <option value="">Pilih Program Studi</option>
-                <option value="informatika">Bisnis Digital</option>
-                <option value="sistem-informasi">Sistem Informasi</option>
-                <option value="manajemen">kewirausahaan</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Mata Kuliah:</label>
-            <div class="checkbox-group">
-                <input type="checkbox" id="programming" name="minat" value="programming">
-                <label for="programming">Programming</label>
-                <input type="checkbox" id="desain" name="minat" value="desain">
-                <label for="desain">Desain</label>
-                <input type="checkbox" id="kewirausahaan" name="minat" value="kewirausahaan">
-                <label for="kewirausahaan">kewirausahaan</label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="alamat">Alamat Lengkap:</label>
-            <textarea id="alamat" name="alamat" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="motivasi">Motivasi Kuliah:</label>
-            <textarea id="motivasi" name="motivasi" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="dokumen">Dokumen Pendukung:</label>
-            <input type="file" id="dokumen" name="dokumen" multiple>
-        </div>
-
-        <button type="submit">Daftar</button>
-    </form>
 </body>
 </html>
