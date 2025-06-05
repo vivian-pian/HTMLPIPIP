@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript While Loop - Contoh Penggunaan</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            border-left: 5px solid #007bff;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,123,255,0.4);
+        }
+        
+        .output {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            min-height: 60px;
+            font-family: monospace;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .interactive-demo {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        
+        input[type="number"] {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 80px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 JavaScript While Loop Tutorial</h1>
+        
+        <!-- Pengenalan While Loop -->
+        <div class="section">
+            <h2>📚 Apa itu While Loop?</h2>
+            <p><strong>While loop</strong> adalah struktur perulangan yang akan terus menjalankan blok kode selama kondisi yang diberikan bernilai <span class="highlight">true</span>.</p>
+            
+            <h3>Sintaks Dasar:</h3>
+           
+            
+            <div class="warning">
+                <strong>⚠️ Peringatan:</strong> Pastikan kondisi loop akan berubah menjadi false, jika tidak loop akan berjalan selamanya (infinite loop)!
+            </div>
+        </div>
+
+        <!-- Contoh 1: Hitungan Sederhana -->
+        <div class="section">
+            <h2>🔢 Contoh 1: Hitungan Sederhana</h2>
+            <p>Mari kita buat loop yang menghitung dari 1 sampai 5:</p>
+            
+            <button class="btn" onclick="example1()">Jalankan Contoh 1</button>
+            <div id="output1" class="output">Klik tombol untuk melihat hasil...</div>
+        </div>
+            
+            <div class="interactive-demo">
+                <label>Hitung jumlah dari 1 sampai: </label>
+                <input type="number" id="inputN" value="10" min="1" max="100">
+                <button class="btn" onclick="example2()">Hitung</button>
+            </div>
+            <div id="output2" class="output">Masukkan angka dan klik Hitung...</div>
+        </div>
+
+        <!-- Contoh 3: Mencari Bilangan -->
+        <div class="section">
+            <h2>🔍 Contoh 3: Mencari Bilangan Genap</h2>
+            <p>Menggunakan while loop untuk mencari dan menampilkan bilangan genap:</p>
+            
+            <div class="interactive-demo">
+                <label>Cari bilangan genap sampai: </label>
+                <input type="number" id="inputGenap" value="20" min="2" max="100">
+                <button class="btn" onclick="example3()">Cari</button>
+            </div>
+            <div id="output3" class="output">Masukkan batas dan klik Cari...</div>
+        </div>
+            
+            <button class="btn" onclick="example4()">Coba Validasi</button>
+            <div id="output4" class="output">Klik tombol untuk mencoba validasi input...</div>
+        </div>
+
+        <div class="section">
+            <h2>🧮 Contoh 5: Menghitung Faktorial</h2>
+            <p>Menggunakan while loop untuk menghitung faktorial (n!):</p>
+            
+            
+            <div class="interactive-demo">
+                <label>Hitung faktorial dari: </label>
+                <input type="number" id="inputFaktorial" value="5" min="0" max="10">
+                <button class="btn" onclick="example5()">Hitung Faktorial</button>
+            </div>
+            <div id="output5" class="output">Masukkan angka dan klik Hitung Faktorial...</div>
+        </div>
+
+        <!-- Contoh 6: Game Tebak Angka -->
+        <div class="section">
+            <h2>🎮 Contoh 6: Game Tebak Angka</h2>
+            <p>Mari buat game sederhana menggunakan while loop:</p>
+
+            
+            <button class="btn" onclick="example6()">Main Game</button>
+            <div id="output6" class="output">Klik tombol untuk bermain game tebak angka...</div>
+        </div>
+
+        <!-- Tips dan Best Practices -->
+        <div class="section">
+            <h2>💡 Tips dan Best Practices</h2>
+            <ul>
+                <li><strong>Selalu pastikan kondisi loop akan berubah</strong> - Jangan sampai terjadi infinite loop</li>
+                <li><strong>Inisialisasi variabel dengan benar</strong> - Pastikan variabel counter sudah memiliki nilai awal</li>
+                <li><strong>Update variabel di dalam loop</strong> - Jangan lupa increment/decrement atau mengubah kondisi</li>
+                <li><strong>Gunakan while untuk kondisi yang tidak diketahui jumlah iterasinya</strong></li>
+                <li><strong>Pertimbangkan menggunakan for loop jika jumlah iterasi sudah diketahui</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Contoh 1: Hitungan Sederhana
+        function example1() {
+            let output = "";
+            let i = 1;
+            
+            while (i <= 5) {
+                output += "Hitungan ke-" + i + "\n";
+                i++;
+            }
+            
+            document.getElementById('output1').innerText = output;
+        }
+
+        // Contoh 2: Penjumlahan
+        function example2() {
+            const n = parseInt(document.getElementById('inputN').value);
+            let jumlah = 0;
+            let i = 1;
+            let proses = "";
+            
+            while (i <= n) {
+                jumlah += i;
+                proses += i + (i < n ? " + " : " = ");
+                i++;
+            }
+            
+            const output = `Proses: ${proses}${jumlah}\nHasil: 1 + 2 + 3 + ... + ${n} = ${jumlah}`;
+            document.getElementById('output2').innerText = output;
+        }
+
+        // Contoh 3: Bilangan Genap
+        function example3() {
+            const batas = parseInt(document.getElementById('inputGenap').value);
+            let i = 2;
+            let hasil = [];
+            
+            while (i <= batas) {
+                if (i % 2 === 0) {
+                    hasil.push(i);
+                }
+                i++;
+            }
+            
+            const output = `Bilangan genap dari 2 sampai ${batas}:\n${hasil.join(', ')}\n\nTotal: ${hasil.length} bilangan genap`;
+            document.getElementById('output3').innerText = output;
+        }
+
+        // Contoh 4: Validasi Input
+        function example4() {
+            let angka;
+            let percobaan = 0;
+            let valid = false;
+            
+            while (!valid && percobaan < 3) {
+                angka = prompt("Masukkan angka antara 1-10:");
+                percobaan++;
+                
+                if (angka === null) {
+                    document.getElementById('output4').innerText = "Validasi dibatalkan oleh user.";
+                    return;
+                }
+                
+                angka = parseInt(angka);
+                
+                if (angka >= 1 && angka <= 10) {
+                    valid = true;
+                    document.getElementById('output4').innerText = `✅ Berhasil! Angka ${angka} valid dalam ${percobaan} percobaan.`;
+                } else {
+                    if (percobaan < 3) {
+                        alert("❌ Angka tidak valid! Coba lagi.");
+                    }
+                }
+            }
+            
+            if (!valid) {
+                document.getElementById('output4').innerText = "❌ Validasi gagal setelah 3 percobaan.";
+            }
+        }
+
+        // Contoh 5: Faktorial
+        function example5() {
+            const n = parseInt(document.getElementById('inputFaktorial').value);
+            let hasil = 1;
+            let i = 1;
+            let proses = "";
+            
+            if (n === 0) {
+                document.getElementById('output5').innerText = "0! = 1 (berdasarkan definisi)";
+                return;
+            }
+            
+            while (i <= n) {
+                hasil *= i;
+                proses += i + (i < n ? " × " : " = ");
+                i++;
+            }
+            
+            const output = `Proses: ${proses}${hasil}\nJadi ${n}! = ${hasil}`;
+            document.getElementById('output5').innerText = output;
+        }
+
+        // Contoh 6: Game Tebak Angka
+        function example6() {
+            let angkaRahasia = Math.floor(Math.random() * 10) + 1;
+            let tebakan;
+            let percobaan = 0;
+            let menang = false;
+            let riwayat = "";
+            
+            while (!menang && percobaan < 5) {
+                tebakan = parseInt(prompt(`🎮 Game Tebak Angka (1-10)\nPercobaan ${percobaan + 1}/5\n\nMasukkan tebakan Anda:`));
+                
+                if (tebakan === null) {
+                    document.getElementById('output6').innerText = "Game dibatalkan oleh pemain.";
+                    return;
+                }
+                
+                percobaan++;
+                riwayat += `Percobaan ${percobaan}: ${tebakan}`;
+                
+                if (tebakan === angkaRahasia) {
+                    menang = true;
+                    riwayat += " ✅ BENAR!\n";
+                    alert("🎉 SELAMAT! Anda menang!");
+                } else if (tebakan < angkaRahasia) {
+                    riwayat += " 📈 Terlalu kecil\n";
+                    alert("📈 Terlalu kecil! Coba yang lebih besar.");
+                } else {
+                    riwayat += " 📉 Terlalu besar\n";
+                    alert("📉 Terlalu besar! Coba yang lebih kecil.");
+                }
+            }
+            
+            let hasil = riwayat + "\n";
+            if (menang) {
+                hasil += `🎉 MENANG dalam ${percobaan} percobaan!`;
+            } else {
+                hasil += `😞 KALAH! Angka yang benar: ${angkaRahasia}`;
+            }
+            
+            document.getElementById('output6').innerText = hasil;
+        }
+
+        // Menjalankan contoh otomatis saat halaman dimuat
+        window.onload = function() {
+            console.log("🚀 Halaman tutorial while loop telah dimuat!");
+            console.log("Anda bisa mencoba semua contoh dengan mengklik tombol-tombolnya.");
+        };
+    </script>
+</body>
+</html>
